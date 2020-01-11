@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- default引用environment的id,来选择当前所使用的环境 -->
+	<environments default="mysql">
+		<!-- 声明可以使用的环境,每个environment代表一个环境 -->
+		<environment id="mysql">
+			<!-- 使用原生JDBC事务 -->
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<property name="url" value="jdbc:mysql://localhost:3306/javaweb"/>
+				<property name="username" value="root"/>
+				<property name="password" value="cyr19971106"/>
+			</dataSource>
+		</environment>
+	</environments>
+	<!-- 加载mapper文件-->
+	<mappers>
+		<mapper resource="com/yinen/java/flower/mapper/FlowerMapper.xml"/>
+	</mappers>
+</configuration>

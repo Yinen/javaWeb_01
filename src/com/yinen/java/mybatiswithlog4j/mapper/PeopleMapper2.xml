@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namesapce:理解成实现类的全路径(包名+类名) -->
+<mapper namespace="com.yinen.java.mybatiswithlog4j.mapper.PeopleMapper2">
+	<!-- id:方法名
+		parameterType:定义参数类型
+		resultType:返回值类型.指的是一个记录的类型。数据字段是通过实体类与属性名相同进行反射对应，名字不同时可以使用别名
+
+		如果方法返回值是list,在resultType中写List的泛型,因为mybatis
+		对jdbc封装,一行一行读取数据
+	-->
+	<select id="selAll" resultType="com.yinen.java.mybatiswithlog4j.pojo.People">
+		select * from people
+	</select>
+
+	<select id="selById" resultType="com.yinen.java.mybatiswithlog4j.pojo.People">
+		select * from people where id=1 or id=2
+	</select>
+</mapper>

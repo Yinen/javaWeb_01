@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yinen.java.interfaceWithMapper.mapper.LogMapper">
+	<select id="selAll" resultType="com.yinen.java.interfaceWithMapper.pojo.Log">
+		select * from log
+	</select>
+
+	<select id="selByAccInAccout" resultType="com.yinen.java.interfaceWithMapper.pojo.Log">
+		select * from log where accin=#{accin}  and accout=#{accout}
+	</select>
+</mapper>
